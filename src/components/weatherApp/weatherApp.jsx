@@ -1,20 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './weatherApp.css'
 import searchIcon from '../asset/search.png'
 import cloudIcon from '../asset/cloud.png'
 import humidityIcon from '../asset/humidity.png'
 import windIcon from '../asset/wind.png'
 
+const WeatherApp =  ({}) => {
 
-
-const WeatherApp = () => {
     let apiKey = "f2c5e602932cf65101cdfd241a2e6569";
 
-const search = () =>{
+const search = async () =>{
     const element = document.getElementsByClassName("cityInput")
     if(element[0].value===""){
         return 0
     }
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${element[0].value}&units=Metric&appid=${apiKey}`
+    let response = await fetch(url);
+    let data = await response.json()
+
+    const humidity = document.getElementsByClassName("humidityPercentage");
+    const wind = document.getElementsByClassName("windRate");
+    const temperature = document.getElementsByClassName("weatherTemp");
+    const location = document.getElementsByClassName("weatherLocation");
+
+    humidity[0].innerHTML = data.main.humidity+"%";
+    wind[0].innerHTML = data.wind.speed+" km/hr";
+    temperature[0].innerHTML = data.main.temp+ "°C";
+    location[0].innerHTML = data.name;
 }
 
   return (
@@ -35,14 +47,14 @@ const search = () =>{
                 <img src={humidityIcon} alt="" className="icon" />
                 <div className="data">
                     <div className="humidityPercentage">65%</div>
-                    <div className="humidity">Humidity</div>
+                    <div className="text">Humidity</div>
                 </div>
             </div>
             <div className="element">
                 <img src={windIcon} alt="" className="icon" />
                 <div className="data">
-                    <div className="humidityPercentage">18 km/hr</div>
-                    <div className="humidity">Wind Speed</div>
+                    <div className="windRate">18 km/hr</div>
+                    <div className="text">Wind Speed</div>
                 </div>
             </div>
         </div>
@@ -50,4 +62,4 @@ const search = () =>{
   )
 }
 
-export default WeatherApp
+export default WeatherApp;
