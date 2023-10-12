@@ -45,7 +45,7 @@ const WeatherApp = () => {
                     location: data.name
                 });
             } else {
-                setErrorMessage(data.message || "Erro in Loading the Page");
+                setErrorMessage(data.message || "city not found");
             }
             if (data.weather[0].icon === "01d" || data.weather[0].icon === "01n" ){
                 setWeatherIcon(clearIcon);
@@ -65,7 +65,7 @@ const WeatherApp = () => {
                 setWeatherIcon(clearIcon);
             }
         } catch (error) {
-            setErrorMessage("Erro in Loading the Page");
+            setErrorMessage("city not found");
         }
     };
 
@@ -84,7 +84,7 @@ const WeatherApp = () => {
                     location: data.name
                 });
             } else {
-                setErrorMessage(data.message || "Erro in Loading the Page");
+                setErrorMessage("city not found");
             }
             if (data.weather[0].icon === "01d" || data.weather[0].icon === "01n" ){
                 setWeatherIcon(clearIcon);
