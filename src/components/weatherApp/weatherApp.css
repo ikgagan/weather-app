@@ -1,6 +1,6 @@
 .container{
     width: 607px;
-    height: 829px;
+    height: 850px;
     margin:  auto;
     margin-top: 75px;
     border-radius: 12px;
@@ -36,6 +36,16 @@
     height: 78px;
     background: #ebfffc;
     border-radius: 40px;
+    cursor: pointer;
+}
+.currentLocationButton{
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background: #ebfffc;
+    border-radius: 40px;
+    margin-top: 25px;
     cursor: pointer;
 }
 
