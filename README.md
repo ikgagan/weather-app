@@ -1,6 +1,6 @@
 # Weather App
 
-Here is the Link for my Portfolio Website : [https://ikgagan.github.io/weather-app/](https://ikgagan.github.io/weather-app/ "https://ikgagan.github.io/weather-app/")
+Here is the Link for the weather app website : [https://ikgagan.github.io/weather-app/](https://ikgagan.github.io/weather-app/ "https://ikgagan.github.io/weather-app/")
 
 
 ### Stack used for building the website: 
